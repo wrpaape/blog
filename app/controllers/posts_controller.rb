@@ -1,4 +1,4 @@
-class PostsControllerController < ApplicationController
+class PostsController < ApplicationController
   def index
     begin
       all_posts = Post.all
@@ -90,7 +90,4 @@ class PostsControllerController < ApplicationController
         render json: error.message, status: 422
     end
   end
-
 end
-
-
