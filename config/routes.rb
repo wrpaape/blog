@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/about' => 'welcome#about'
   resources :posts, :welcome
-  root 'welcome#index'
+  root :to => redirect('/welcome')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

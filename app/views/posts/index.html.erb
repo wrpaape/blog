@@ -1,0 +1,9 @@
+<ul class="subtitles">
+  <% posts.each do |post| %>
+   <li>
+     <div class="links"><%= link_to "view", "posts/#{post.id}" %></div>
+     <%= button_to "delete", { action: "destroy", id: post.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+     <%= render partial: 'post', locals: { post: post } %>
+   </li>
+  <% end %>
+</ul>

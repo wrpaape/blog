@@ -1,3 +1,35 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.body {
+  background: blue;
+  font-family: fantasy;
+  font-size: 20px;
+  color: yellow;
+  text-align: center;
+  .subtitles{
+    margin-top: 80px;
+    font-size: 20px;
+  }
+  .img_row{
+  height: 200px;
+  margin-top: 100px;
+  background: orange;
+    .img{
+      height: 150px;
+      padding-top: 45px;
+      width: 200px;
+      display: inline-block;
+    }
+  }
+  .links{
+    margin-top: 80px;
+    display: inline-block;
+    width: 33%;
+    .link{
+      color: yellow
+    }
+  }
+  .text{
+    margin-top: 50px;
+    font-size: 15px;
+  }
+}
+
