@@ -4,26 +4,20 @@
   font-size: 30px;
   color: yellow;
   text-align: center;
-
   .subtitle{
     margin-top: 80px;
   }
-
   .img_row{
   height: 200px;
   margin-top: 100px;
   background: orange;
-
     .img{
       height: 150px;
       padding-top: 45px;
       width: 200px;
       display: inline-block;
-
     }
-
   }
-
   .links{
     margin-top: 80px;
     display: inline-block;
@@ -31,6 +25,10 @@
     .link{
       color: yellow
     }
+  }
+  .text{
+    margin-top: 50px;
+    font-size: 15px;
   }
 }
 

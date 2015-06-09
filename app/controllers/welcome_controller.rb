@@ -17,7 +17,7 @@ def index
     begin
       new_post = Post.create
       respond_to do |f|
-        f.html { render "new.html.erb", locals: { posts: new_post } }
+        f.html { render "about.html.erb", locals: { posts: new_post } }
         f.json { render json: new_post }
       end
       rescue ActiveRecord::RecordNotFound => error
