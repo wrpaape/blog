@@ -60,11 +60,14 @@ class PostsControllerController < ApplicationController
 
   def update
     begin
-      post = Post.find(params[:id])
-      post.completed = params[:completed] if params[:completed]
-      post.body = params[:body] if params[:body]
-      post.save
-      render_json(post, 200)
+      updated_post = Post.find(params[:id])
+      updated_post.title = params[:title] if params[:title]
+      updated_post.body = params[:body] if params[:body]
+      updated_post.save
+      respond_to do |f|
+        f.html { render "update.html.erb", locals: { posts: updated_post } }
+        f.json { render json: updated_post}
+      end
       rescue ActiveRecord::RecordNotFound => error
         render json: error.message, status: 404
       rescue StandardError => error
@@ -75,12 +78,11 @@ class PostsControllerController < ApplicationController
   def destroy
     begin
       post = Post.find(params[:id])
-      response = post
+      destroyed_post = post
       post.destroy
-      response_code = "200"
       respond_to do |f|
-        f.html { render_html("destroy.html.erb", response, response_code) }
-        f.json { render_json(response, response_code) }
+        f.html { render "destroy.html.erb", locals: { posts: destroyed_post } }
+        f.json { render json: destroyed_post}
       end
       rescue ActiveRecord::RecordNotFound => error
         render json: error.message, status: 404
