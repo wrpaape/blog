@@ -5,7 +5,7 @@
   color: yellow;
   text-align: center;
   .subtitles{
-    margin-top: 80px;
+    margin-top: 0px;
     font-size: 20px;
   }
   .img_row{
@@ -15,17 +15,13 @@
     .img{
       height: 150px;
       padding-top: 45px;
-      width: 200px;
       display: inline-block;
+      width: 25%;
     }
   }
-  .links{
-    margin-top: 80px;
-    display: inline-block;
-    width: 33%;
-    .link{
-      color: yellow
-    }
+  .link{
+    font-size: 20px;
+    color: yellow;
   }
   .text{
     margin-top: 50px;

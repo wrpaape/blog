@@ -1,3 +1,4 @@
+<% images = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twentyone", "twentytwo", "twentythree", "twentyfour", "twentyfive", "twentysix", "twentyseven", "twentyeight", "twentynine", "thirty"] %>
 <html>
 <head>
   <title>About</title>
@@ -7,10 +8,10 @@
   <div class="subtitle">about me...</div>
     <div class="links"><a class="link" href="./">back</a></div>
     <div class="img_row">
-      <div class="img"><img src="../assets/twentynine.gif" style="max-height: 100px"></div>
-      <div class="img"><img src="../assets/twentythree.gif" style="max-height: 100px"></div>
-      <div class="img"><img src="../assets/twentyfive.gif" style="max-height: 100px"></div>
-      <div class="img"><img src="../assets/twentyeight.gif" style="max-height: 100px"></div>
+      <div class="img"><%= image_tag("#{images.sample}.gif", :height => "100") %></div>
+      <div class="img"><%= image_tag("#{images.sample}.gif", :height => "100") %></div>
+      <div class="img"><%= image_tag("#{images.sample}.gif", :height => "100") %></div>
+      <div class="img"><%= image_tag("#{images.sample}.gif", :height => "100") %></div>
     </div>
     <div class="text">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
