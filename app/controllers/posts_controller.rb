@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
   def index
     begin
-      all_posts = Post.all.order(created_at: :desc)
       respond_to do |f|
-        f.html { render "index.html.erb", locals: { posts: all_posts } }
+        f.html { render "index.html.erb", locals: { posts: Post.all.order(created_at: :desc), post_inst: Post.new } }
         f.json { render json: all_posts }
       end
     rescue ActiveRecord::RecordNotFound => error
@@ -29,10 +28,9 @@ class PostsController < ApplicationController
 
   def create
     begin
-      create_params = params.select{ |k,v| k == :title || k == :body }
-      new_post = Post.create(create_params)
+      new_post = Post.create(post_params)
       respond_to do |f|
-        f.html { render "create.html.erb", locals: { posts: new_post } }
+        f.html { render "index.html.erb" }
         f.json { render json: new_post }
       end
       rescue ActiveRecord::RecordNotFound => error

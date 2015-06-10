@@ -26,16 +26,4 @@ def index
         render json: error.message, status: 422
     end
   end
-
-  def new_post
-    begin
-      respond_to do |f|
-        f.html { render "new_post.html.erb" }
-      end
-      rescue ActiveRecord::RecordNotFound => error
-        render json: error.message, status: 404
-      rescue StandardError => error
-        render json: error.message, status: 422
-    end
-  end
 end
