@@ -1,4 +1,12 @@
 <% images = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twentyone", "twentytwo", "twentythree", "twentyfour", "twentyfive", "twentysix", "twentyseven", "twentyeight", "twentynine", "thirty"] %>
+<p>create a new post</p>
+<%= form_for Post.new, url: posts_path, method: :post do |f| %>
+  <%= f.text_field :title %><br/>
+  <%= f.text_area :body %><br/>
+  <%= f.submit %>
+<% end %>
+
+
 <% posts.each do |post| %>
  <p class="subtitles">
    <div class="link"><%= link_to "view this post", "posts/#{post.id}", { :style=>'color:yellow;' } %></div>

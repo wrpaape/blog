@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/about' => 'welcome#about'
+  post 'posts' => 'posts#index'
   resources :posts, :welcome
   root :to => redirect('/welcome')
 

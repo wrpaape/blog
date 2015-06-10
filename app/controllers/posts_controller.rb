@@ -1,15 +1,15 @@
 class PostsController < ApplicationController
   def index
     begin
-      all_posts = Post.all
+      all_posts = Post.all.order(created_at: :desc)
       respond_to do |f|
         f.html { render "index.html.erb", locals: { posts: all_posts } }
         f.json { render json: all_posts }
       end
     rescue ActiveRecord::RecordNotFound => error
       render json: error.message, status: 404
-    # rescue StandardError => error
-      # render json: error.message, status: 422
+    rescue StandardError => error
+      render json: error.message, status: 422
     end
   end
 
