@@ -28,9 +28,9 @@ class PostsController < ApplicationController
 
   def create
     begin
-      new_post = Post.create(post_params)
+      Post.create(post_params)
       respond_to do |f|
-        f.html { render "index.html.erb" }
+        f.html { redirect_to posts_path }
         f.json { render json: new_post }
       end
       rescue ActiveRecord::RecordNotFound => error
@@ -87,5 +87,11 @@ class PostsController < ApplicationController
       rescue StandardError => error
         render json: error.message, status: 422
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end
